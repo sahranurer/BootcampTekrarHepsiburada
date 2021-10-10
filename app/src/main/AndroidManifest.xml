@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BootcampTekrarHepsiburada">
         <activity
+            android:name=".bilgiyarismasi.model.AddNewQuestionsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".bilgiyarismasi.model.QuestionsActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
