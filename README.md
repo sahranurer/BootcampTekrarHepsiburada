@@ -54,7 +54,7 @@ class Papper : Picture(){
 Abstract Class ve interface’lerden objeler türetilemez. Class’lara implement edilirler.Abstract, tüm classlarda kullanılacak yapıları içerirken Interface’ler nitelik bazlıdır. Bu yüzden spesifik bir özellik içeriliyorsa bu yapıyı Interface’lerde tanımlamalıyız. Şablon yapıları kurgularken de Abstract class’ları tercih etmeliyiz.
 Abstract
 Birden fazla Abstract Class bir sınıfa implement edilemez. Abstract Class içerisinde fonksiyonların abstract olacağını belirtirsek body’siz fonksiyon tanımlayabiliriz aksi halde body’siz fonksiyon tanımlamasına izin verilmeyecektir. Değişken tanımı yapılırken initialize etmemiz gerekmektedir.
-
+`
 fun main(args: Array<String>) {
     val jack = Engineer("Recep Yeşilkaya")
     jack.displayJob("Computer Engineering")
@@ -75,6 +75,7 @@ class Engineer(name: String): Person(name) {
         println("Description : $description")
     }
 }
+`
 ### android:exported="true" nedir ? 
  Diğer uygulamaların gösterilen activity'i kullanmasına izin vermek demek.Ancak kullanmak istemiyorsak android:exported="false" olarak ayarlanır.Bu işlem AndroidManifest.xml 
  dosyasında yer almaktadır.
