@@ -60,6 +60,7 @@ fun main(args: Array<String>) {
     jack.displayJob("Computer Engineering")
     jack.personAge(22)
 }
+ ````
 abstract class Person(name: String) {
     init {
         println("Name : $name")
@@ -68,14 +69,14 @@ abstract class Person(name: String) {
         println("Age : $age")
     }
 
-    abstract fun displayJob(description: String)
+  ````  abstract fun displayJob(description: String)````
 }
 class Engineer(name: String): Person(name) {
     override fun displayJob(description: String) {
         println("Description : $description")
     }
 }
-`
+`````
 ### android:exported="true" nedir ? 
  Diğer uygulamaların gösterilen activity'i kullanmasına izin vermek demek.Ancak kullanmak istemiyorsak android:exported="false" olarak ayarlanır.Bu işlem AndroidManifest.xml 
  dosyasında yer almaktadır.
