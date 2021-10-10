@@ -5,11 +5,15 @@ Bootcampta işlenen konuların tekrar edilmesi
 
 ### val ve var nedir ? Arasındaki farklar nelerdir ? 
 Değişken tanımlamak istediğimizde val veya var anahtar kelimelerine ihtiyacımız vardır. var anahtar kelimesi değiştirilebilir. Örneğin ; 
+````
 var age = 16 
 age = 18 
+````
 olarak değiştirebiliriz.Ancak val anahtar kelimesi ise değiştirilemez.Örneğin ;
+````
 var myName = "Sahra"
 myName = "Merve"
+````
 yazarsak hata almış oluruz.
 
 ### null-safety Nedir ? (?,!! arasındaki farklar nelerdir ? Ne işe yararlar ?)
@@ -23,7 +27,7 @@ Sınıf -> Nesnelerin özellikleri ve davranışları ile ilgili ayrıntıları 
 Nesne(object) -> Nesneler sınıfların somutlaştırılmış halidir.Sınıflar ve nesneler arasında bir bağ vardır. val system = MySystem() burada MySystem() sınıfından system adında bir nesne 
 oluşturuldu.Örneğin ; system.goster() kullanılabilir.
 Kalıtım -> Mevcut sınıftan başka bir sınıf türetilmesi için kullanılır.Kodun tekrar kulllanılabilirliğini arttırır. open anahtar kelimesi sınıfın başına yazılır.
-
+````
 open class MySystem() 
 open class addSystem: MySystem()
 
@@ -37,10 +41,10 @@ class Notlar(isim:String,kod:Int,adres:String,system:String,var puan:Int):addSys
 fun main(){
     var my = Notlar("Sahra",21457822,"Tekirdağ","Elektrik Devreleri",87)
 }
-
+````
 ### polimorfizm nedir ?
 Inheritance ettiğimiz class’daki bir metodu ovveride etmemize verilen isimdir. Böylelikle o metodun içeriğini istediğimiz gibi değiştirebiliriz.
-
+````
 open class Picture(){
           open fun draw(){println("Picture Class")}
 }
@@ -49,18 +53,19 @@ class Papper : Picture(){
     fun test() { super.draw()}
     override fun draw() {println("Papper Class")}
 }
+````
 
 ### abstruct class nedir ? Interface Nedir ?
 Abstract Class ve interface’lerden objeler türetilemez. Class’lara implement edilirler.Abstract, tüm classlarda kullanılacak yapıları içerirken Interface’ler nitelik bazlıdır. Bu yüzden spesifik bir özellik içeriliyorsa bu yapıyı Interface’lerde tanımlamalıyız. Şablon yapıları kurgularken de Abstract class’ları tercih etmeliyiz.
 Abstract
 Birden fazla Abstract Class bir sınıfa implement edilemez. Abstract Class içerisinde fonksiyonların abstract olacağını belirtirsek body’siz fonksiyon tanımlayabiliriz aksi halde body’siz fonksiyon tanımlamasına izin verilmeyecektir. Değişken tanımı yapılırken initialize etmemiz gerekmektedir.
-`
+`````
 fun main(args: Array<String>) {
     val jack = Engineer("Recep Yeşilkaya")
     jack.displayJob("Computer Engineering")
     jack.personAge(22)
 }
- ````
+ 
 abstract class Person(name: String) {
     init {
         println("Name : $name")
@@ -69,7 +74,7 @@ abstract class Person(name: String) {
         println("Age : $age")
     }
 
-  ````  abstract fun displayJob(description: String)````
+   abstract fun displayJob(description: String)
 }
 class Engineer(name: String): Person(name) {
     override fun displayJob(description: String) {
