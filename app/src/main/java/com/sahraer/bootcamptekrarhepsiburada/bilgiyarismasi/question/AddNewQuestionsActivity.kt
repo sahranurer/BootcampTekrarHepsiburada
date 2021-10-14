@@ -1,4 +1,4 @@
-package com.sahraer.bootcamptekrarhepsiburada.bilgiyarismasi.model
+package com.sahraer.bootcamptekrarhepsiburada.bilgiyarismasi.question
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +8,9 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.Toast
 import com.sahraer.bootcamptekrarhepsiburada.R
+import com.sahraer.bootcamptekrarhepsiburada.bilgiyarismasi.data.CampHelper
+import com.sahraer.bootcamptekrarhepsiburada.bilgiyarismasi.data.model.Answer
+import com.sahraer.bootcamptekrarhepsiburada.bilgiyarismasi.data.model.Question
 
 class AddNewQuestionsActivity : AppCompatActivity() {
 
@@ -51,6 +54,16 @@ class AddNewQuestionsActivity : AppCompatActivity() {
 
     private fun save() {
         Log.e("AddNewQuestionsActivity","Bu form kaydedilebilir")
+        val question = Question(question = editTextQuestion.text.toString(),
+            answers = arrayListOf(
+                Answer(type = "A",answer = edittext_a.text.toString()),
+                Answer(type = "B",answer = edittext_b.text.toString()) ,
+                Answer(type = "C",answer = edittext_c.text.toString()),
+                Answer(type = "D",answer = edittext_d.text.toString())
+            ),
+            correntAnswer = secilenCevap  ?: "")
+        CampHelper.list.add(question) // kaydedilen veri CampHelper listesine eklenmiş olucak
+        finish()
     }
 
     fun EditText.isValid() :Boolean{
@@ -63,10 +76,14 @@ class AddNewQuestionsActivity : AppCompatActivity() {
 
     private fun isValid():Boolean { // bu metot ile formun dolu boş kontrolü sağlanıyor
 
-        var isValid = true
+        var isValid:Boolean
 
-        isValid = editTextQuestion.isValid() || edittext_a.isValid() ||
-                edittext_b.isValid() || edittext_c.isValid() || edittext_d.isValid()
+
+        isValid = editTextQuestion.isValid()
+        isValid = edittext_a.isValid()
+        isValid = edittext_b.isValid()
+        isValid = edittext_c.isValid()
+        isValid = edittext_d.isValid()
 
         if (secilenCevap.isNullOrEmpty()){ // radioGroup seçildi mi kontrolu
             Toast.makeText(this,"Şıklardan birini seçmek zorundasınız",Toast.LENGTH_SHORT).show()

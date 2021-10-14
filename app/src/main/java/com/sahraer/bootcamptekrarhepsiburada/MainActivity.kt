@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import com.sahraer.bootcamptekrarhepsiburada.bilgiyarismasi.model.QuestionsActivity
+import com.sahraer.bootcamptekrarhepsiburada.bilgiyarismasi.question.QuestionsActivity
 
 class MainActivity : AppCompatActivity() {
     val buttonQuestions by lazy {findViewById<View>(R.id.button_questions)}

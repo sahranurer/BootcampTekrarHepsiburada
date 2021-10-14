@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BootcampTekrarHepsiburada">
         <activity
-            android:name=".bilgiyarismasi.model.AddNewQuestionsActivity"
+            android:name=".bilgiyarismasi.question.AddNewQuestionsActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="true" />
         <activity
-            android:name=".bilgiyarismasi.model.QuestionsActivity"
+            android:name=".bilgiyarismasi.question.QuestionsActivity"
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
