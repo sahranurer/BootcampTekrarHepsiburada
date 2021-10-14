@@ -99,9 +99,9 @@ Class tanımalamızda data keywordünü kullandığımızda Kotlin otomatik olar
 data class Book(val name: String, val author: String, var page: Int)
 
 `````
-### recyclerview vw listview arasındaki fark nedir ?
+### Recyclerview vw listview arasındaki fark nedir ?
 Öncelikle iki yapı arasındaki fark performans farkıdır.Bu performans farkının recyclerview>listview olduğunu söylebilirim.Nedeni ise listview belirtilen listenin tamamanını ekranda çizdirmeye çalışır.Ancak recyclerview ekrana sığacak kadar veri sağlar.Bu ise ayırt edici bir performans özelliği sağlamaktadır.
-#### viewholder-LayoutManager
+#### Viewholder-LayoutManager
 ViewHolder basitçe liste elemanlarını öğe üzerinde tutan yapıdır diyebiliriz. Bu yapı Listviewde isteğe bağlı kullanılırken; Recyclerviewde kullanımı zorunludur. 
 LayoutManager, adapter ve recyclerview arasındaki bir katman yada bir düzenleyici yapıdır. Elemanlarımızın ekranda nasıl konumlandırılacağı ile ilgilenir.
 ListView kullanımında elemanlar dikey olarak hizalanırken; RecylerView ile karşımıza 3 seçenek çıkmaktadır:
@@ -109,8 +109,12 @@ ListView kullanımında elemanlar dikey olarak hizalanırken; RecylerView ile ka
 LinearLayoutManager: Elemanlarımızı yatayda veya dikeyde hizalar.
 GridLayoutManager: Elemanları belirlediğimiz satır ve sütunda aynı boyutta hizalar
 StaggeredGridLayoutManager: Elemanlarımızı bizim belirlediğimiz sınırlarda farklı boyutlarda hizalar.
-#### adapter 
+#### Adapter 
 Adapter bir veri kaynağıyla, veriye ihtiyacı olan nesneyi birbirine bağlamaya yarayan yapılardır. ListView gibi bir dizi veriyi içinde bulunduran yapılara, bu verileri adapter aracılığıyla veririz. Adapter bir veri kaynağındaki verileri (kısaca, veri modelini) görsel öğelerde kullanmaya uygun hale getirir.
-### lifecycle
+### Lifecycle
 Bir aktivite yeni bir duruma girerken sistem bu geri aramaların her birini çağırır.
 ![activity_lifecycle](https://user-images.githubusercontent.com/63001162/137275085-d9666c18-aa88-4b2f-b2eb-721c0f9d3591.png)
+### Firebase Nedir ?
+Google tarafından yeni özelliklerin eklenmesiyle gelişen Firebase, bütün bu ihtiyaçları karşılayabilme iddiasında bulunan ücretsiz bir kullanım sunan platform
+![image-firebase0002](https://user-images.githubusercontent.com/63001162/137275586-a61cfa47-1d99-49db-9f56-3335d9206f41.png)
+
