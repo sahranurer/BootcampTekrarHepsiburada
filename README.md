@@ -85,3 +85,32 @@ class Engineer(name: String): Person(name) {
 ### android:exported="true" nedir ? 
  Diğer uygulamaların gösterilen activity'i kullanmasına izin vermek demek.Ancak kullanmak istemiyorsak android:exported="false" olarak ayarlanır.Bu işlem AndroidManifest.xml 
  dosyasında yer almaktadır.
+
+### data class nedir ?
+Data Class nedir
+Data class bir class tanımlamasıdır , aşağıdaki fonksiyoneliteleri çok kısa bir şekilde içine alır (otomatik tanımlar):
+constructor
+Fields-alan
+Getter ve setter fonksiyonları
+hashCode(), equals() ve toString() fonksiyonları
+Class tanımalamızda data keywordünü kullandığımızda Kotlin otomatik olarak fieldlara ulaşılabilcek getter setterları ,hashCode(), equals(), toString(), copy() ve componentN() fonksiyonlarını yaratır.
+
+`````
+data class Book(val name: String, val author: String, var page: Int)
+
+`````
+### recyclerview vw listview arasındaki fark nedir ?
+Öncelikle iki yapı arasındaki fark performans farkıdır.Bu performans farkının recyclerview>listview olduğunu söylebilirim.Nedeni ise listview belirtilen listenin tamamanını ekranda çizdirmeye çalışır.Ancak recyclerview ekrana sığacak kadar veri sağlar.Bu ise ayırt edici bir performans özelliği sağlamaktadır.
+#### viewholder-LayoutManager
+ViewHolder basitçe liste elemanlarını öğe üzerinde tutan yapıdır diyebiliriz. Bu yapı Listviewde isteğe bağlı kullanılırken; Recyclerviewde kullanımı zorunludur. 
+LayoutManager, adapter ve recyclerview arasındaki bir katman yada bir düzenleyici yapıdır. Elemanlarımızın ekranda nasıl konumlandırılacağı ile ilgilenir.
+ListView kullanımında elemanlar dikey olarak hizalanırken; RecylerView ile karşımıza 3 seçenek çıkmaktadır:
+![recylerview](https://user-images.githubusercontent.com/63001162/137274766-8d524e3a-7e9d-4cd3-8142-dfc8dcac6979.png)
+LinearLayoutManager: Elemanlarımızı yatayda veya dikeyde hizalar.
+GridLayoutManager: Elemanları belirlediğimiz satır ve sütunda aynı boyutta hizalar
+StaggeredGridLayoutManager: Elemanlarımızı bizim belirlediğimiz sınırlarda farklı boyutlarda hizalar.
+#### adapter 
+Adapter bir veri kaynağıyla, veriye ihtiyacı olan nesneyi birbirine bağlamaya yarayan yapılardır. ListView gibi bir dizi veriyi içinde bulunduran yapılara, bu verileri adapter aracılığıyla veririz. Adapter bir veri kaynağındaki verileri (kısaca, veri modelini) görsel öğelerde kullanmaya uygun hale getirir.
+### lifecycle
+Bir aktivite yeni bir duruma girerken sistem bu geri aramaların her birini çağırır.
+![activity_lifecycle](https://user-images.githubusercontent.com/63001162/137275085-d9666c18-aa88-4b2f-b2eb-721c0f9d3591.png)
